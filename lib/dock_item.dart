@@ -47,7 +47,7 @@ class DockItem extends ConsumerWidget {
   /// Builds the icon container with animations.
   Widget _buildIconContainer() {
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
       constraints: const BoxConstraints(minWidth: 48), // Fixed width
       height: 48, // Fixed height

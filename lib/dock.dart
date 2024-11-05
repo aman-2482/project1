@@ -1,20 +1,22 @@
-import 'package:flutter/cupertino.dart'; // Import the Cupertino package
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dock_controller.dart';
 import 'dock_item.dart';
 
-/// Dock widget that displays a list of draggable items.
+
+/// Built using `ConsumerWidget` to listen for state changes via Riverpod.
 class Dock extends ConsumerWidget {
   const Dock({super.key, required this.items});
+
 
   final List<IconData> items;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Watch the state from dockControllerProvider to get updated dock items
     final items = ref.watch(dockControllerProvider);
 
     return Padding(
-
       padding: const EdgeInsets.only(bottom: 10),
       child: Container(
         decoration: BoxDecoration(
